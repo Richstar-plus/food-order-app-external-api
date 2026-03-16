@@ -7,6 +7,7 @@ import {MenuPage} from "./pages/Menu";
 import {ContactPage} from "./pages/Contact";
 import {CartPage} from "./pages/Cart";
 import {ProfilePage} from "./pages/Profile";
+import { MealsLoader as MealsApi } from "./pages/Home";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <HomePage />,
+        loader: MealsApi,
       },
       {
         path: "about",

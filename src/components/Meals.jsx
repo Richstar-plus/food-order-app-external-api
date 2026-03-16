@@ -1,105 +1,23 @@
-import meal2 from "../images/image2.png";
+import { currencyFormatter } from "../util/formatter.js";
 
-export function Meals() {
+export function Meals({ meals }) {
   return (
     <div className="meals-container">
-      <div className="meal-card">
-        <div className="meal-image">
-          <img src={meal2} alt="" />
-        </div>
-        <h3 className="title">Meal 1</h3>
-        <p className="description">
-          A delicious meal made with fresh ingredients and a blend of spices to
-        </p>
-        <p className="price">$12.99</p>
-        <div className="cart-btn-container">
-          <button className="order-btn">Add to cart</button>
-        </div>
-      </div>
+      {meals.map((recipe) => (
+        <div className="meal-card" key={recipe.id}>
+          <div className="meal-image">
+            <img src={recipe.thumbnail_url} alt="" />
+          </div>
+          <h3 className="title">{recipe.name}</h3>
 
-      <div className="meal-card">
-        <div className="meal-image">
-          <img src={meal2} alt="" />
+          <p className="price">
+            {currencyFormatter.format(recipe.price.total / 100)}
+          </p>
+          <div className="cart-btn-container">
+            <button className="order-btn">Add to cart</button>
+          </div>
         </div>
-        <h3 className="title">Meal 1</h3>
-        <p className="description">
-          A delicious meal made with fresh ingredients and a blend of spices to
-        </p>
-        <p className="price">$12.99</p>
-        <div className="cart-btn-container">
-          <button className="order-btn">Add to cart</button>
-        </div>
-      </div>
-
-      <div className="meal-card">
-        <div className="meal-image">
-          <img src={meal2} alt="" />
-        </div>
-        <h3 className="title">Meal 1</h3>
-        <p className="description">
-          A delicious meal made with fresh ingredients and a blend of spices to
-        </p>
-        <p className="price">$12.99</p>
-        <div className="cart-btn-container">
-          <button className="order-btn">Add to cart</button>
-        </div>
-      </div>
-
-      <div className="meal-card">
-        <div className="meal-image">
-          <img src={meal2} alt="" />
-        </div>
-        <h3 className="title">Meal 1</h3>
-        <p className="description">
-          A delicious meal made with fresh ingredients and a blend of spices to
-        </p>
-        <p className="price">$12.99</p>
-        <div className="cart-btn-container">
-          <button className="order-btn">Add to cart</button>
-        </div>
-      </div>
-
-      <div className="meal-card">
-        <div className="meal-image">
-          <img src={meal2} alt="" />
-        </div>
-        <h3 className="title">Meal 1</h3>
-        <p className="description">
-          A delicious meal made with fresh ingredients and a blend of spices to
-        </p>
-        <p className="price">$12.99</p>
-        <div className="cart-btn-container">
-          <button className="order-btn">Add to cart</button>
-        </div>
-      </div>
-
-      <div className="meal-card">
-        <div className="meal-image">
-          <img src={meal2} alt="" />
-        </div>
-        <h3 className="title">Meal 1</h3>
-        <p className="description">
-          A delicious meal made with fresh ingredients and a blend of spices to
-        </p>
-        <p className="price">$12.99</p>
-        <div className="cart-btn-container">
-          <button className="order-btn">Add to cart</button>
-        </div>
-      </div>
-
-      <div className="meal-card">
-        <div className="meal-image">
-          <img src={meal2} alt="" />
-        </div>
-        <h3 className="title">Meal 1</h3>
-        <p className="description">
-          A delicious meal made with fresh ingredients and a blend of spices to
-        </p>
-        <p className="price">$12.99</p>
-        <div className="cart-btn-container">
-          <button className="order-btn">Add to cart</button>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }

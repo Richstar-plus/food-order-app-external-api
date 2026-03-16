@@ -6,6 +6,7 @@ import { useLoaderData } from "react-router-dom";
 
 export function HomePage() {
   const meals = useLoaderData();
+  console.log(meals);
   return (
     <>
       <main>
@@ -40,7 +41,7 @@ export function HomePage() {
 
 
 
-export async function TestLoader() {
+export async function MealsLoader() {
   const response = await fetch(
     "https://tasty.p.rapidapi.com/recipes/list",
     {
@@ -55,7 +56,7 @@ export async function TestLoader() {
 
   if (!response.ok) {
     throw new Response(
-      JSON.stringify({ message: "Could not fetch jobs." }),
+      JSON.stringify({ message: "Could not fetch meals." }),
       { status: 500 }
     );
   }
