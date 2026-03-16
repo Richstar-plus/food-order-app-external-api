@@ -1,0 +1,124 @@
+
+header {
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+header .logo {
+  display: flex;
+}
+
+header .logo h2 {
+  color: var(--accent);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
+  font-size: 15px;
+}
+
+header .profile-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(192, 132, 252, 0.644);  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.header-middle .header-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+}
+
+.header-middle .header-links p {
+  font-size: 13px;
+}
+
+.header-middle .header-links p a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header-middle .header-links p a:hover {
+  color: #810cda;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search input {
+  padding: 6px 5px 5px 5px;
+  width: 300px;
+  border: 1px solid #810cda;
+  border-radius: 20px;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  outline: none;
+  color: var(--text);
+} 
+
+.search-icon {
+  border: 1px solid #810cda;
+  border-right: none;
+  padding: 7px 10px 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.search-icon .icon {
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.cart-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cart-button button {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.cart-button button:hover {
+  background: #810cda;
+}
+
+.cart-button button p {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: rgb(255, 136, 0);
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -6,6 +6,7 @@ import {
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
+import "./Header.css";
 
 export function Header() {
   return (
