@@ -5,6 +5,8 @@ import {
   faUtensils,
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
+
 export function Header() {
   return (
     <>
@@ -17,16 +19,16 @@ export function Header() {
         <div className="header-middle">
           <div className="header-links">
             <p>
-              <a href="#">Home</a>
+              <NavLink to="/">Home</NavLink>
             </p>
             <p>
-              <a href="#">Menu</a>
+              <NavLink to="/menu">Menu</NavLink>
             </p>
             <p>
-              <a href="#">About</a>
+              <NavLink to="/about">About</NavLink>
             </p>
             <p>
-              <a href="#">Contact</a>
+              <NavLink to="/contact">Contact</NavLink>
             </p>
           </div>
           <div className="search">
@@ -38,13 +40,17 @@ export function Header() {
         </div>
         <div className="cart-icons">
           <div className="cart-button">
-            <button>
-             Order now <FontAwesomeIcon icon={faShoppingCart} />
-             <p>0</p>
-            </button>
+            <NavLink to="/cart">
+              <button>
+                Order now <FontAwesomeIcon icon={faShoppingCart} />
+                <p>0</p>
+              </button>
+            </NavLink>
           </div>
           <div className="profile-icon">
-            <FontAwesomeIcon icon={faUser} />
+            <NavLink to="/profile">
+              <FontAwesomeIcon icon={faUser} />
+            </NavLink>
           </div>
         </div>
       </header>

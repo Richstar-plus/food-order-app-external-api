@@ -121,6 +121,7 @@ header .profile-icon {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   outline: none;
+  color: var(--text);
 } 
 
 .search-icon {
@@ -175,4 +176,8 @@ header .profile-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+a {
+  text-decoration: none;
 }
