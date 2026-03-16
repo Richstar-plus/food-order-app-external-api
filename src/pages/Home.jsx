@@ -1,5 +1,6 @@
 import "./Home.css";
 import chefImage from "../assets/cheff.png";
+import { Meals } from "../components/Meals";
 
 export function HomePage() {
   return (
@@ -25,7 +26,9 @@ export function HomePage() {
             <h2>Our Menu</h2>
             <p>Enjoy the best food in town!</p>
           </div>
-          <div className="meal-container"></div>
+          <div className="meal-container">
+            <Meals />
+          </div>
         </section>
       </main>
     </>

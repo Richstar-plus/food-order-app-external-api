@@ -1,4 +1,3 @@
-
 main {
   padding: 20px;
   display: flex;
@@ -6,7 +5,7 @@ main {
   align-items: center;
 }
 
-.display{
+.display {
   display: flex;
   gap: 40px;
   margin-bottom: 40px;
@@ -37,7 +36,7 @@ main {
   justify-content: center;
 }
 
-.display .ad-message  .order-btn button {
+.display .ad-message .order-btn button {
   background: rgb(219, 148, 14);
   color: var(--bg);
   border: none;
@@ -60,4 +59,34 @@ main {
 .main .welcome p {
   color: var(--text);
   font-size: 16px;
+}
+
+.meals-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: minmax(250px, auto);
+  row-gap: 120px;
+  justify-content: center;
+  width: 60rem;
+  padding-top: 100px;
+}
+
+.meals-container .meal-card {
+  border: 1px solid var(--accent-border);
+  border-radius: 20px;
+  width: 200px;
+  height: 250px;
+  position: relative;
+}
+
+.meals-container .meal-card .meal-image {
+  background: var(--code-bg);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-border);
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
 }
