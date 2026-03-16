@@ -1,7 +1,11 @@
 export function AboutPage() {
   return (
     <>
-      <h1>About Us</h1>
+      <main>
+        <section className="display">
+          <h2>About Us</h2>
+        </section>
+      </main>
     </>
   );
 } 
