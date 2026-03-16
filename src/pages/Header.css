@@ -4,6 +4,12 @@ header {
   align-items: top;
   justify-content: space-between;
   padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  box-shadow: var(--shadow);
 }
 
 header .logo {

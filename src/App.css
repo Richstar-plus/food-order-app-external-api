@@ -54,6 +54,11 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+  margin-top: 60px;
+}
+
 
 a {
   text-decoration: none;
