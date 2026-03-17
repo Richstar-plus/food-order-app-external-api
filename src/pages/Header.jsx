@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
+import { Button } from "../components/UI/Button";
 
 export function Header() {
   return (
@@ -42,10 +43,10 @@ export function Header() {
         <div className="cart-icons">
           <div className="cart-button">
             <NavLink to="/cart">
-              <button>
+              <Button>
                 Order now <FontAwesomeIcon icon={faShoppingCart} />
                 <p>0</p>
-              </button>
+              </Button>
             </NavLink>
           </div>
           <div className="profile-icon">

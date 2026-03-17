@@ -1,3 +1,5 @@
+import { Button } from "./UI/Button";
+
 export function Summary() {
   return (
     <div className="summary">
@@ -21,7 +23,7 @@ export function Summary() {
         <div className="col">TOTAL PRICE</div>
         <div className="col text-right">&euro; 137.00</div>
       </div>
-      <button className="btn">CHECKOUT</button>
+      <Button className="btn">CHECKOUT</Button>
     </div>
   );
 }
