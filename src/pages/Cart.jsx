@@ -1,4 +1,8 @@
 import "./Cart.css";
+import image from "../images/image1.png";
+import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export function CartPage() {
   return (
@@ -13,90 +17,45 @@ export function CartPage() {
                     <div className="col">
                       <h3>Shopping Cart </h3>
                     </div>
-                    <div className="cart-item-no">
-                      3 items
-                    </div>
+                    <div className="cart-item-no">3 items</div>
                   </div>
                 </div>
 
                 <div className="row border-top border-bottom">
-                  <div className="row main align-items-center">
+                  <div className="cart-card-item">
                     <div className="col-2">
-                      <img className="img-fluid" src="" />
+                      <img className="img-fluid" src={image} alt="Product" />
                     </div>
-                    <div className="col">
-                      <div className="row text-muted">Shirt</div>
-                      <div className="row">Cotton T-shirt</div>
+                    <div className="cart-card-title">
+                      <div className="cart-title">Shirt Cotton T-shirt</div>
                     </div>
-                    <div className="col">
-                      <a href="#">-</a>
+                    <div className="cart-card-quantity">
+                      <button className="btn">-</button>
                       <a href="#" className="border">
                         1
                       </a>
-                      <a href="#">+</a>
+                      <button className="btn">+</button>
                     </div>
-                    <div className="col">
-                      &euro; 44.00 <span className="close">&#10005;</span>
-                    </div>
+                    <div className="cart-item-price">44.00</div>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="row main align-items-center">
-                    <div className="col-2">
-                      <img className="img-fluid" src="" />
-                    </div>
-                    <div className="col">
-                      <div className="row text-muted">Shirt</div>
-                      <div className="row">Cotton T-shirt</div>
-                    </div>
-                    <div className="col">
-                      <a href="#">-</a>
-                      <a href="#" className="border">
-                        1
-                      </a>
-                      <a href="#">+</a>
-                    </div>
-                    <div className="col">
-                      &euro; 44.00 <span className="close">&#10005;</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="row border-top border-bottom">
-                  <div className="row main align-items-center">
-                    <div className="col-2">
-                      <img className="img-fluid" src="" />
-                    </div>
-                    <div className="col">
-                      <div className="row text-muted">Shirt</div>
-                      <div className="row">Cotton T-shirt</div>
-                    </div>
-                    <div className="col">
-                      <a href="#">-</a>
-                      <a href="#" className="border">
-                        1
-                      </a>
-                      <a href="#">+</a>
-                    </div>
-                    <div className="col">
-                      &euro; 44.00 <span className="close">&#10005;</span>
-                    </div>
-                  </div>
-                </div>
+
                 <div className="back-to-shop">
-                  <a href="#">&leftarrow;</a>
-                  <span className="text-muted">Back to shop</span>
+                  <NavLink to="/">
+                    <FontAwesomeIcon icon={faArrowLeft} />{" "}
+                  </NavLink>
                 </div>
               </div>
 
-              <div className="col-md-4 summary">
-                <div>
-                  <h5>
-                    <b>Summary</b>
-                  </h5>
+              <div className="summary">
+                <div className="summary-title">
+                  <h3>
+                    Summary
+                  </h3>
                 </div>
-                <hr />
-                <div className="row">
-                  <div className="col">ITEMS 3</div>
+
+                <div className="row summary-item-price">
+                  <div className="col">ITEMS (3)</div>
                   <div className="col text-right">&euro; 132.00</div>
                 </div>
                 <form>
@@ -106,10 +65,10 @@ export function CartPage() {
                       Standard-Delivery- &euro;5.00
                     </option>
                   </select>
-                  <p>GIVE CODE</p>
+                  <p>PROMO CODE</p>
                   <input id="code" placeholder="Enter your code" />
                 </form>
-                <div className="row">
+                <div className="row total-price">
                   <div className="col">TOTAL PRICE</div>
                   <div className="col text-right">&euro; 137.00</div>
                 </div>

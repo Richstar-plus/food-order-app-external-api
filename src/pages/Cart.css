@@ -1,6 +1,5 @@
 .cart-container {
   margin: 4vh auto;
-
 }
 
 .card {
@@ -9,7 +8,7 @@
   width: 90%;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 1rem;
-  border: transparent;
+  border: 1px solid rgba(52, 2, 65, 0.137);
 }
 
 @media (max-width: 767px) {
@@ -23,6 +22,7 @@
   border-bottom-left-radius: 1rem;
   border-top-left-radius: 1rem;
   width: 550px;
+  position: relative;
 }
 
 @media (max-width: 767px) {
@@ -38,27 +38,36 @@
   display: flex;
 }
 
-.summary {
-  background-color: #ddd;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  padding: 4vh;
-  color: rgb(65, 65, 65);
-  width: 400px;
-}
-@media (max-width: 767px) {
-  .summary {
-    border-top-right-radius: unset;
-    border-bottom-left-radius: 1rem;
-  }
+.cart-card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
-.summary .col-2 {
-  padding: 0;
+.cart-card-quantity .btn {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  color: rgb(39, 1, 51);
+  padding: 0.5vh 1vh;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.summary .col-10 {
-  padding: 0;
+.cart-item-price {
+  font-size: 0.9rem;
+  color: rgb(39, 1, 51);
+  font-weight: 500;
+}
+
+.cart-title {
+  font-size: 13px;
+}
+
+.back-to-shop {
+  position: absolute;
+  bottom: 5px;
 }
 
 .title .row {
@@ -67,13 +76,14 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.137);
 }
 
-.title .row .cart-item-no{
-  color: rgba(61, 2, 78, 0.459);
+.title .row .cart-item-no {
+  color: rgba(62, 2, 78, 0.705);
   font-weight: 500;
 }
 
 .title h3 {
   font-weight: bold;
+  color: orange;
 }
 
 .title .row {
@@ -95,7 +105,7 @@
   margin-left: auto;
   font-size: 0.7rem;
 }
-img {
+.cart-card-item img {
   width: 3.5rem;
 }
 .back-to-shop {
@@ -108,6 +118,44 @@ h5 {
 hr {
   margin-top: 1.25rem;
 }
+
+.summary {
+  background-color: var(--accent);
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 4vh 4vh 20px 4vh;
+  color: white;
+  width: 400px;
+  max-height: 500px;
+}
+@media (max-width: 767px) {
+  .summary {
+    border-top-right-radius: unset;
+    border-bottom-left-radius: 1rem;
+  }
+}
+
+.summary-title {
+  padding-bottom: 4vh;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 10px;
+}
+
+.summary .summary-item-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+.summary .col-2 {
+  padding: 0;
+}
+
+.summary .col-10 {
+  padding: 0;
+}
+
 .summary form {
   padding: 2vh 0;
 }
@@ -115,6 +163,7 @@ hr {
 .summary select {
   border: 1px solid rgba(0, 0, 0, 0.137);
   padding: 1.5vh 1vh;
+  margin-top: 6px;
   margin-bottom: 4vh;
   outline: none;
   width: 100%;
@@ -124,49 +173,63 @@ hr {
 .summary input {
   border: 1px solid rgba(0, 0, 0, 0.137);
   padding: 1vh;
+  margin-top: 6px;
   margin-bottom: 4vh;
   outline: none;
   width: 100%;
   background-color: rgb(247, 247, 247);
 }
+
 .summary input:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-
-.summary .btn{
-    background-color: #000;
-    border-color: #000;
-    color: white;
-    width: 100%;
-    font-size: 0.7rem;
-    margin-top: 4vh;
-    padding: 1vh;
-    border-radius: 0;
-}
-.summary .btn:focus{
-    box-shadow: none;
-    outline: none;
-    box-shadow: none;
-    color: white;
-    -webkit-box-shadow: none;
-    -webkit-user-select: none;
-    transition: none;
+.total-price {
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
-.summary .btn:hover{
-    color: white;
+.summary .btn {
+  background-color: orange;
+  border: none;
+  color: white;
+  width: 100%;
+  font-size: 0.7rem;
+  margin-top: 4vh;
+  padding: 1vh;
+  border-radius: 4px;
+  cursor: pointer;
 }
-.summary a{
-    color: black; 
+.summary .btn:focus {
+  box-shadow: none;
+  outline: none;
+  box-shadow: none;
+  color: white;
+  -webkit-box-shadow: none;
+  -webkit-user-select: none;
+  transition: none;
 }
-.summary a:hover{
-    color: black;
-    text-decoration: none;
+
+.summary .btn:hover {
+  color: white;
 }
-.summary #code{
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253) , rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
-    background-repeat: no-repeat;
-    background-position-x: 95%;
-    background-position-y: center;
+.summary a {
+  color: black;
+}
+.summary a:hover {
+  color: black;
+  text-decoration: none;
+}
+.summary #code {
+  background-image:
+    linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0.253),
+      rgba(255, 255, 255, 0.185)
+    ),
+    url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: center;
 }
