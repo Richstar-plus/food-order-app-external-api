@@ -1,0 +1,30 @@
+.modal {
+  border: none;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeInScale 0.3s ease;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff7a00;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modal button:hover {
+  background-color: #e66a00;
+}
