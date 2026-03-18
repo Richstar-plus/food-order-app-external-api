@@ -16,7 +16,7 @@ export function CartItems({
 
   return (
     <div className="cart-card-item">
-      <div className="col-2">
+      <div className="cart-card-image">
         <img className="img-fluid" src={image} alt="Product" />
       </div>
 
