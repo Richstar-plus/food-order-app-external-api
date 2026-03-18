@@ -1,4 +1,3 @@
-import image from "../images/image1.png";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +7,7 @@ import { CartItems } from "./CartItems";
 
 export function Cart() {
   const cartContext = useContext(CartContext);
-    const totalCartItems = cartContext.items.reduce(
+  const totalCartItems = cartContext.items.reduce(
     (total, item) => total + item.quantity,
     0,
   );
@@ -20,13 +19,20 @@ export function Cart() {
           <div className="col">
             <h3>Shopping Cart </h3>
           </div>
-          <div className="cart-item-no">{totalCartItems} {totalCartItems === 1 ? "item" : "items"}</div>
+          <div className="cart-item-no">
+            {totalCartItems} {totalCartItems === 1 ? "item" : "items"}
+          </div>
         </div>
       </div>
 
-      <div className="row border-top border-bottom">
-        <CartItems image={image} />
-      </div>
+        {cartContext.items.map((item) => (
+          <CartItems
+            key={item.id}
+            name={item.name}
+            image={item.thumbnail_url}
+            price={item.price.total}
+          />
+        ))}
 
       <div className="back-to-shop">
         <NavLink to="/">

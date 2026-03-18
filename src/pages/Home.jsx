@@ -46,5 +46,5 @@ export async function MealsLoader() {
 
   const resData = await response.json();
 
-  return resData.results; // RapidAPI returns jobs inside "hits"
+  return resData.results; // RapidAPI returns recipe inside "results"
 }
