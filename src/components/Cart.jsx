@@ -25,14 +25,17 @@ export function Cart() {
         </div>
       </div>
 
-        {cartContext.items.map((item) => (
-          <CartItems
-            key={item.id}
-            name={item.name}
-            image={item.thumbnail_url}
-            price={item.price.total}
-          />
-        ))}
+      {cartContext.items.map((item) => (
+        <CartItems
+          key={item.id}
+          name={item.name}
+          image={item.thumbnail_url}
+          price={item.price.total}
+          quantity={item.quantity}
+          onIncrease={() => cartContext.addItemToCartHandler(item)}
+          onDecrease={() => cartContext.removeItemFromCartHandler(item.id)}
+        />
+      ))}
 
       <div className="back-to-shop">
         <NavLink to="/">
