@@ -1,4 +1,5 @@
 import { currencyFormatter } from "../util/formatter.js";
+import { Button } from "./UI/Button.jsx";
 
 export function Meals({ meals }) {
   return (
@@ -14,7 +15,7 @@ export function Meals({ meals }) {
             {currencyFormatter.format(recipe.price.total / 100)}
           </p>
           <div className="cart-btn-container">
-            <button className="order-btn">Add to cart</button>
+            <Button className="order-btn">Add to cart</Button>
           </div>
         </div>
       ))}

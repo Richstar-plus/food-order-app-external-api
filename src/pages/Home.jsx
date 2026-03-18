@@ -6,7 +6,6 @@ import { useLoaderData } from "react-router-dom";
 
 export function HomePage() {
   const meals = useLoaderData();
-  console.log(meals);
   return (
     <>
       <main>
