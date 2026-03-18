@@ -8,8 +8,17 @@ import {
 import { NavLink } from "react-router-dom";
 import "./Header.css";
 import { Button } from "../components/UI/Button";
+import { useContext } from "react";
+import CartContext from "../store/CartContext";
 
 export function Header() {
+  const cartContext = useContext(CartContext);
+
+  const totalCartItems = cartContext.items.reduce(
+    (total, item) => total + item.quantity,
+    0,
+  );
+
   return (
     <>
       <header>
@@ -45,7 +54,7 @@ export function Header() {
             <NavLink to="/cart">
               <Button>
                 Order now <FontAwesomeIcon icon={faShoppingCart} />
-                <p>0</p>
+                <p>{totalCartItems}</p>
               </Button>
             </NavLink>
           </div>
