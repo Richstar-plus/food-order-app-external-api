@@ -2,35 +2,25 @@ import "./Home.css";
 import chefImage from "../assets/cheff.png";
 import { Meals } from "../components/Meals";
 import { useLoaderData } from "react-router-dom";
-
+import { Hero } from "../components/Hero";
 
 export function HomePage() {
   const meals = useLoaderData();
   return (
     <>
       <main>
-        <section className="display">
-          <div className="ad-message">
-            <h1>Quick and Delicious Meals</h1>
-            <p>
-              Browse our menu, pick your favourite meals, and enjoy fast
-              delivery right to your doorstep!
-            </p>
-            <div className="order-btn">
-              <button>Sign up Now</button>
-            </div>
-          </div>
-          <div className="ad-image">
-            <img src={chefImage} alt="Chef" />
-          </div>
-        </section>
+        <Hero chefImage={chefImage} />
         <section className="main">
           <div className="welcome">
             <h2>Our Menu</h2>
             <p>Enjoy the best food in town!</p>
           </div>
           <div className="meal-container">
-            <Meals meals={meals} />
+            <div className="meals-container">
+              {meals.map((meal) => (
+                <Meals key={meal.id} meals={meal} />
+              ))}
+            </div>
           </div>
         </section>
       </main>
@@ -38,26 +28,20 @@ export function HomePage() {
   );
 }
 
-
-
 export async function MealsLoader() {
-  const response = await fetch(
-    "https://tasty.p.rapidapi.com/recipes/list",
-    {
-      method: "GET",
-      headers: {
-        "x-rapidapi-key": "dfeaf6ba79mshf4a5472af01a80dp1af4aejsnc39c76c478a8",
-        "x-rapidapi-host": "tasty.p.rapidapi.com",
-        'Content-Type': 'application/json'
-      },
-    }
-  );
+  const response = await fetch("https://tasty.p.rapidapi.com/recipes/list", {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "dfeaf6ba79mshf4a5472af01a80dp1af4aejsnc39c76c478a8",
+      "x-rapidapi-host": "tasty.p.rapidapi.com",
+      "Content-Type": "application/json",
+    },
+  });
 
   if (!response.ok) {
-    throw new Response(
-      JSON.stringify({ message: "Could not fetch meals." }),
-      { status: 500 }
-    );
+    throw new Response(JSON.stringify({ message: "Could not fetch meals." }), {
+      status: 500,
+    });
   }
 
   const resData = await response.json();
