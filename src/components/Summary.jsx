@@ -5,17 +5,17 @@ import { currencyFormatter } from "../util/formatter";
 import { Modal } from "./Modal";
 
 export function Summary() {
-    const cartContext = useContext(CartContext);
+  const cartContext = useContext(CartContext);
   const [showModal, setShowModal] = useState(false);
 
   function handleCheckout() {
     setShowModal(true);
+    cartContext.clearCartHandler();
   }
 
   function handleCloseModal() {
     setShowModal(false);
   }
-
 
   const totalCartItems = cartContext.items.reduce(
     (total, item) => total + item.quantity,
@@ -28,7 +28,7 @@ export function Summary() {
   );
 
   let shippingCost;
-  if (cartContext.items.length <= 5) {
+  if (cartContext.items.length <= 2) {
     shippingCost = 0.0;
   } else {
     shippingCost = 15.0;
@@ -37,8 +37,12 @@ export function Summary() {
   return (
     <>
       <Modal open={showModal} onClose={handleCloseModal}>
-        <h2>Order Confirmed ✅</h2>
-        <p>Your order has been placed successfully!</p>
+        <div>
+          <h2>Order Confirmed ✅</h2>
+          <h4>Order Number: #{Math.floor(Math.random() * 10000)}</h4>
+          <p>Your order has been placed successfully!</p>
+        </div>
+
         <Button onClick={handleCloseModal}>Close</Button>
       </Modal>
       <div className="summary">
@@ -75,7 +79,11 @@ export function Summary() {
           </div>
         </div>
 
-        <Button className="btn" onClick={handleCheckout}>
+        <Button
+          className="btn"
+          onClick={handleCheckout}
+          disabled={cartContext.items.length === 0}
+        >
           CHECKOUT
         </Button>
       </div>
