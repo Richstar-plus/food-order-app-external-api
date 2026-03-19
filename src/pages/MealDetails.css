@@ -1,0 +1,153 @@
+.meal-details-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 80px;
+  box-shadow: 0 0 5px 10px rgba(0, 0, 0, 0.137);
+  border-radius: 10px;
+  border: none;
+  width: 70vw;
+  height: 90vh;
+  position: relative;
+}
+
+.meal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: -50px;
+  left: 20px;
+  width: 16%;
+  font-size: 13px;
+}
+
+.details-holder {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.details-row1 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 600px;
+  height: 100%;
+}
+
+.details-image {
+  width: 100%;
+  height: 50%;
+  box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.15);
+  background-color: blueviolet;
+  border-radius: 10px;
+}
+
+.meal-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.details-video {
+  width: 100%;
+  height: 35%;
+  margin: 20px 0 0 0;
+  border-radius: 6px;
+  position: relative;
+}
+
+.details-video .play {
+  position: absolute;
+  width: 70px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1px;
+}
+
+.details-video .video-thumbnail {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.video-info {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 6px;
+  background-color: rgba(0, 0, 0, 0.527);
+  text-align: center;
+  color: white;
+  width: 200px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.details-row2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.meal-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgb(41, 27, 1);
+  line-height: 40px;
+  text-shadow: 0 0 10px rgba(29, 19, 1, 0.5);
+}
+
+.rating {
+  margin: 10px 10px 10px 50px;
+  padding-bottom: 15px;
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.247);
+}
+
+.rating img {
+  width: 120px;
+  margin-right: 20px;
+}
+
+.rating-value {
+  font-size: 15px;
+  color: rgb(41, 27, 1);
+  text-shadow: 0 0 10px rgba(29, 19, 1, 0.5);
+}
+
+.meal-description {
+  margin: 10px 10px 10px 50px;
+  padding-bottom: 15px;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.247);
+}
+
+.meal-instruction {
+  display: flex;
+  margin: 10px 10px 10px 50px;
+}
+
+li {
+  list-style: none;
+}
+
+.meal-instruction .meal-nutrition {
+  width: 50%;
+}
+
+.meal-instruction .meal-nutrition table tr td {
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.247);
+  font-size: 14px;
+}
