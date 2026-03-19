@@ -7,8 +7,9 @@ import {MenuPage} from "./pages/Menu";
 import {ContactPage} from "./pages/Contact";
 import {CartPage} from "./pages/Cart";
 import {ProfilePage} from "./pages/Profile";
-import { MealsLoader as MealsApi } from "./pages/Home";
-import { MealDetailsPage, MealDetailsLoader } from "./pages/MealDetails";
+import { MealsLoader as MealsApi } from "./api/MealsLoader";
+import { MealDetailsPage } from "./pages/MealDetails";
+import { MealDetailsLoader } from "./api/MealDetailsLoader";
 
 const router = createBrowserRouter([
   {
