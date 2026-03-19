@@ -36,7 +36,7 @@ export function Summary() {
 
   return (
     <>
-      <Modal open={showModal} onClose={handleCloseModal}>
+      <Modal className="modal" open={showModal} onClose={handleCloseModal}>
         <div>
           <h2>Order Confirmed ✅</h2>
           <h4>Order Number: #{Math.floor(Math.random() * 10000)}</h4>

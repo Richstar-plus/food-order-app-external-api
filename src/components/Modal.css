@@ -10,8 +10,33 @@
   animation: fadeInScale 0.3s ease;
 }
 
-.modal::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
+.meal-details-modal {
+  border: none;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeInScale 0.3s ease;
+  position: relative;
+}
+
+.meal-details-modal button {
+  position: absolute;
+  left: 20px;
+  padding: 5px;
+  color: white;
+  background-color: rgba(255, 166, 0, 0.767);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.modal::backdrop,
+.meal-details-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.76);
 }
 
 .modal button {
@@ -27,4 +52,32 @@
 
 .modal button:hover {
   background-color: #e66a00;
+}
+
+.modal-content ol {
+  text-align: left;
+  margin-top: 1rem;
+  margin-bottom: 20px;
+
+}
+.modal-content ol {
+  list-style: none;          /* remove default bullets */
+  counter-reset: step;       /* initialize counter */
+  padding-left: 0;
+  max-height: 300px;
+  overflow-y: auto;         /* enable vertical scrolling */
+}
+
+.modal-content li {
+  counter-increment: step;   /* increment for each li */
+  margin-bottom: 4px;
+  position: relative;
+  text-align: left;
+  padding-left: 25px;
+}
+
+.modal-content li::before {
+  content: counter(step) ". ";  /* show number */
+  position: absolute;
+  left: 0;
 }

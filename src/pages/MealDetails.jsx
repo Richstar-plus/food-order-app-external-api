@@ -1,15 +1,49 @@
 import "./MealDetails.css";
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import play from "../images/play.png";
 import thumbnail from "../images/video.avif";
+import { Modal } from "../components/Modal";
 import rating1 from "../images/ratings/3star.png";
+import { Button } from "../components/UI/Button";
 
 export function MealDetailsPage() {
   const meal = useLoaderData();
+  const [showModal, setShowModal] = useState(false);
+
+  function handleCheckout() {
+    setShowModal(true);
+  }
+
+  function handleCloseModal() {
+    setShowModal(false);
+  }
 
   return (
     <>
+      <Modal
+        className="meal-details-modal"
+        open={showModal}
+        onClose={handleCloseModal}
+      >
+        <div className="modal-content">
+          <h2>Cooking Instructions</h2>
+          <ol>
+            <li>Preheat the oven to 375°F (190°C).</li>
+            <li>In a large bowl, mix the ingredients together.</li>
+            <li>Transfer the mixture to a baking dish.</li>
+            <li>Bake for 25-30 minutes or until golden brown.</li>
+            <li>
+              Remove from the oven and let it cool for a few minutes before
+              serving.
+            </li>
+
+          </ol>
+        </div>
+
+        <Button onClick={handleCloseModal}>Close</Button>
+      </Modal>
       <div className="meal-details-container">
         <div className="meal-nav">
           <NavLink to="/" className="meal-nav-item">
@@ -68,7 +102,9 @@ export function MealDetailsPage() {
                 </table>
               </div>
               <div className="main-instruction-btn">
-                <button>View Cooking Instructions </button>
+                <button onClick={handleCheckout}>
+                  View Cooking Instructions{" "}
+                </button>
               </div>
             </div>
             <div className="meal-price">
