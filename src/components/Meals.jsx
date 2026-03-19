@@ -16,12 +16,12 @@ export function Meals({ meals }) {
         <div className="meal-image">
           <img src={meals.thumbnail_url} alt="" />
         </div>
-      </NavLink>
       <h3 className="title">{meals.name}</h3>
 
       <p className="price">
         {currencyFormatter.format(meals.price.total / 100)}
       </p>
+      </NavLink>
       <div className="cart-btn-container">
         <Button className="order-btn" onClick={handleMealItemAddToCart}>
           Add to cart
