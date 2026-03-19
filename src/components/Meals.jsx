@@ -2,6 +2,7 @@ import { useContext } from "react";
 import CartContext from "../store/CartContext";
 import { currencyFormatter } from "../util/formatter.js";
 import { Button } from "./UI/Button.jsx";
+import { NavLink } from "react-router-dom";
 
 export function Meals({ meals }) {
   const cartContext = useContext(CartContext);
@@ -11,9 +12,11 @@ export function Meals({ meals }) {
   }
   return (
     <div className="meal-card">
-      <div className="meal-image">
-        <img src={meals.thumbnail_url} alt="" />
-      </div>
+      <NavLink to={`/meal/${meals.id}`} className="meal-link">
+        <div className="meal-image">
+          <img src={meals.thumbnail_url} alt="" />
+        </div>
+      </NavLink>
       <h3 className="title">{meals.name}</h3>
 
       <p className="price">

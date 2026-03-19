@@ -61,7 +61,7 @@ export function Summary() {
           <p>SHIPPING</p>
           <select>
             <option>
-              {cartContext.items.length <= 5
+              {cartContext.items.length <= 2
                 ? "Free-Delivery"
                 : "Standard-Delivery"}{" "}
               - {currencyFormatter.format(shippingCost)}

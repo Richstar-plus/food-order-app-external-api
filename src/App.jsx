@@ -8,6 +8,7 @@ import {ContactPage} from "./pages/Contact";
 import {CartPage} from "./pages/Cart";
 import {ProfilePage} from "./pages/Profile";
 import { MealsLoader as MealsApi } from "./pages/Home";
+import { MealDetailsPage, MealDetailsLoader } from "./pages/MealDetails";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
         path: "",
         element: <HomePage />,
         loader: MealsApi,
+      },
+      {
+        path: "meal/:mealId",
+        element: <MealDetailsPage />,
+        loader: MealDetailsLoader,
       },
       {
         path: "about",
