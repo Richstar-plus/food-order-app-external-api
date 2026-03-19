@@ -7,7 +7,7 @@
   border-radius: 10px;
   border: none;
   width: 70vw;
-  height: 90vh;
+  height: 140vh;
   position: relative;
 }
 
@@ -133,9 +133,16 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.247);
 }
 
-.meal-instruction {
+.meal-price {
+display: flex;
+flex-direction: column;
+}
+
+.meal-instruction, .meal-price {
   display: flex;
   margin: 10px 10px 10px 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.247);
 }
 
 li {
@@ -146,8 +153,52 @@ li {
   width: 50%;
 }
 
-.meal-instruction .meal-nutrition table tr td {
+.meal-instruction .meal-nutrition table tr td,
+.meal-price table tr td {
   padding: 5px;
   border: 1px solid rgba(0, 0, 0, 0.247);
   font-size: 14px;
+}
+
+.main-instruction-btn button {
+  padding: 10px 30px;
+  background-color: rgb(185, 122, 4);
+  box-shadow: 0 0 10px 3px rgba(185, 122, 4, 0.5);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.total-tag, .total-tag-amount {
+  font-weight: bold;
+}
+
+.tips {
+  margin: 20px 10px 10px 50px;
+  padding: 20px 10px 10px 10px;
+  border-radius: 10px;
+  background-color: rgba(5, 151, 25, 0.582);
+  position: relative;
+}
+
+.tips .tip-tag h5 {
+  background-color: rgb(185, 122, 4);
+  width: 120px;
+  padding: 3px;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+  position: absolute;
+  top: -40px;
+}
+
+.tips ul {
+  font-size: 13px;
+  overflow-y: auto;
+  scrollbar-width: auto;
+  height: 80px;
+  color: white;
+
 }

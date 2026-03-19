@@ -41,9 +41,7 @@ export function MealDetailsPage() {
               <div className="rating-value">(12000 Reviews)</div>
             </div>
             <div className="meal-description">
-              <p>
-                {meal.description}
-              </p>
+              <p>{meal.description}</p>
             </div>
             <div className="meal-instruction">
               <div className="meal-nutrition">
@@ -67,13 +65,45 @@ export function MealDetailsPage() {
                       <td>34g</td>
                     </tr>
                   </tbody>
-
                 </table>
               </div>
-              <div className="main-instruction-btn"></div>
+              <div className="main-instruction-btn">
+                <button>View Cooking Instructions </button>
+              </div>
             </div>
-            <div className="meal-price"></div>
-            <div className="tips"></div>
+            <div className="meal-price">
+              <h4>Pricing Breakdown</h4>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Consumption Portion:</td>
+                    <td>20.5</td>
+                  </tr>
+                  <tr>
+                    <td>Consumption Total:</td>
+                    <td>12.0</td>
+                  </tr>
+                  <tr>
+                    <td>Portion:</td>
+                    <td>12.5</td>
+                  </tr>
+                  <tr>
+                    <td className="total-tag">Total:</td>
+                    <td className="total-tag-amount">34.9</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="tips">
+              <div className="tip-tag">
+                <h5>Chef's Tips</h5>
+              </div>
+              <ul>
+                <li>Use fresh ingredients for better flavor.</li>
+                <li>Don't overcook the meat to keep it tender.</li>
+                <li>Experiment with different spices to enhance the taste.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
