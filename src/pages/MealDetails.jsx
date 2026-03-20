@@ -11,10 +11,17 @@ import rating5 from "../images/ratings/5star.png";
 import { Button } from "../components/UI/Button";
 import { currencyFormatter } from "../util/formatter.js";
 import { VideoBox } from "../components/UI/VideoPlayer.jsx";
+import { useContext } from "react";
+import CartContext from "../store/CartContext";
 
 export function MealDetailsPage() {
   const meal = useLoaderData();
   const [showModal, setShowModal] = useState(false);
+  const cartContext = useContext(CartContext);
+
+  function handleMealItemAddToCart() {
+    cartContext.addItemToCartHandler(meal);
+  }
 
   function handleCheckout() {
     setShowModal(true);
@@ -25,7 +32,8 @@ export function MealDetailsPage() {
   }
 
   const rating = Math.round(meal.user_ratings.score * 5);
-  const reviews = meal.user_ratings.count_positive + meal.user_ratings.count_negative;
+  const reviews =
+    meal.user_ratings.count_positive + meal.user_ratings.count_negative;
 
   return (
     <>
@@ -70,13 +78,17 @@ export function MealDetailsPage() {
               <h1>{meal.name}</h1>
             </div>
             <div className="rating">
-              {
-                rating === 5 ? <img src={rating5} alt="" className="rating-image" /> :
-                rating >= 4 ? <img src={rating4} alt="" className="rating-image" /> :
-                rating >= 3 ? <img src={rating3} alt="" className="rating-image" /> :
-                rating >= 2 ? <img src={rating2} alt="" className="rating-image" /> :
+              {rating === 5 ? (
+                <img src={rating5} alt="" className="rating-image" />
+              ) : rating >= 4 ? (
+                <img src={rating4} alt="" className="rating-image" />
+              ) : rating >= 3 ? (
+                <img src={rating3} alt="" className="rating-image" />
+              ) : rating >= 2 ? (
+                <img src={rating2} alt="" className="rating-image" />
+              ) : (
                 <img src={rating1} alt="" className="rating-image" />
-              }
+              )}
               <div className="rating-value">({reviews} Reviews)</div>
             </div>
             <div className="meal-description">
@@ -118,7 +130,10 @@ export function MealDetailsPage() {
                 <Button onClick={handleCheckout} className="button">
                   View Cooking Instructions{" "}
                 </Button>
-                <Button className="add-to-cart-btn">
+                <Button
+                  className="add-to-cart-btn"
+                  onClick={handleMealItemAddToCart}
+                >
                   Add to Cart
                 </Button>
               </div>
