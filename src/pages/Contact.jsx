@@ -32,7 +32,7 @@ export function ContactPage() {
                 <h3>Call Us</h3>
               </div>
               <div className="hero-text">
-                <p>(+123) 456-7890-009</p>
+                <p>(+123) 9039-014-066</p>
               </div>
             </div>
 
@@ -44,7 +44,7 @@ export function ContactPage() {
                 <h3>Email Us</h3>
               </div>
               <div className="hero-text">
-                <p>info@richstarfood.com</p>
+                <p>richardsunday081@gmail.com</p>
               </div>
             </div>
 

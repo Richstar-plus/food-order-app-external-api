@@ -33,6 +33,7 @@ const router = createBrowserRouter([
       {
         path: "menu",
         element: <MenuPage />,
+        loader: MealsApi,
       },
       {
         path: "contact",
