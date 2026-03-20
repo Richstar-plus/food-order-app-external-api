@@ -61,7 +61,7 @@ export function MealDetailsPage() {
               <img src={meal.thumbnail_url} alt="" className="meal-image" />
             </div>
             <div className="details-video">
-              <VideoBox url={meal.original_video_url} />
+              <VideoBox url={meal.video_url} />
               <div className="video-info">Watch Cooking Video</div>
             </div>
           </div>
