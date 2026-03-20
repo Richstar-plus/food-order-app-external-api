@@ -115,9 +115,12 @@ export function MealDetailsPage() {
                 </table>
               </div>
               <div className="main-instruction-btn">
-                <button onClick={handleCheckout}>
+                <Button onClick={handleCheckout} className="button">
                   View Cooking Instructions{" "}
-                </button>
+                </Button>
+                <Button className="add-to-cart-btn">
+                  Add to Cart
+                </Button>
               </div>
             </div>
             <div className="meal-price">
