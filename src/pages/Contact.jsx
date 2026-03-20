@@ -44,7 +44,7 @@ export function ContactPage() {
                 <h3>Email Us</h3>
               </div>
               <div className="contact-email">
-                <p>richardsunday081@gmail.com</p>
+                <p>richardsunday0812@gmail.com</p>
               </div>
             </div>
 

@@ -61,8 +61,7 @@ export function AboutPage() {
               </div>
               <div className="hero-text">
                 <p>
-                  We are committed to providing excellent customer service and
-                  ensuring...
+                  We are committed to providing excellent customer service and...
                 </p>
               </div>
             </div>
