@@ -45,3 +45,13 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+.contact-email p {
+  font-size: 12px;
+  color: rgb(63, 58, 50);
+  width: 100%;
+    word-break: break-all;
+  overflow-wrap: break-word;
+  line-height: 20px;
+  padding: 10px 8px;
+}

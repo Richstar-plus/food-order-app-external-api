@@ -7,7 +7,7 @@
   border-radius: 10px;
   border: none;
   width: 70vw;
-  height: 140vh;
+  height: 150vh;
   position: relative;
 }
 
@@ -164,6 +164,7 @@ li {
 
 .main-instruction-btn {
   position: relative;
+  margin-left: 20px;
 }
 
 .main-instruction-btn .button {
@@ -174,6 +175,7 @@ li {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .add-to-cart-btn {
@@ -185,9 +187,6 @@ li {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  position: absolute;
-  top: 50px;
-  right: 1px;
 }
 
 .total-tag,
