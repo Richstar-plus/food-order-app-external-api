@@ -7,6 +7,7 @@ import thumbnail from "../images/video.avif";
 import { Modal } from "../components/Modal";
 import rating1 from "../images/ratings/3star.png";
 import { Button } from "../components/UI/Button";
+import { currencyFormatter } from "../util/formatter.js";
 
 export function MealDetailsPage() {
   const meal = useLoaderData();
@@ -30,20 +31,15 @@ export function MealDetailsPage() {
         <div className="modal-content">
           <h2>Cooking Instructions</h2>
           <ol>
-            <li>Preheat the oven to 375°F (190°C).</li>
-            <li>In a large bowl, mix the ingredients together.</li>
-            <li>Transfer the mixture to a baking dish.</li>
-            <li>Bake for 25-30 minutes or until golden brown.</li>
-            <li>
-              Remove from the oven and let it cool for a few minutes before
-              serving.
-            </li>
-
+            {meal.instructions?.map((instruction) => (
+              <li key={instruction.id}>{instruction.display_text}</li>
+            )) || <p>No instructions available.</p>}
           </ol>
         </div>
 
         <Button onClick={handleCloseModal}>Close</Button>
       </Modal>
+
       <div className="meal-details-container">
         <div className="meal-nav">
           <NavLink to="/" className="meal-nav-item">
@@ -83,20 +79,28 @@ export function MealDetailsPage() {
                 <table>
                   <tbody>
                     <tr>
-                      <td>Calories</td>
-                      <td>12g</td>
+                      <td>Colaries</td>
+                      <td>%{meal.nutrition?.calories / 100 || "N/A"}</td>
                     </tr>
                     <tr>
                       <td>Carbohydrates</td>
-                      <td>1g</td>
+                      <td>%{meal.nutrition?.carbohydrates / 100 || "N/A"}</td>
                     </tr>
                     <tr>
                       <td>Protein</td>
-                      <td>12g</td>
+                      <td>%{meal.nutrition?.protein / 100 || "N/A"}</td>
                     </tr>
                     <tr>
                       <td>Fat</td>
-                      <td>34g</td>
+                      <td>%{meal.nutrition?.fat / 100 || "N/A"}</td>
+                    </tr>
+                    <tr>
+                      <td>Sugar</td>
+                      <td>%{meal.nutrition?.sugar / 100 || "N/A"}</td>
+                    </tr>
+                    <tr>
+                      <td>Fiber</td>
+                      <td>%{meal.nutrition?.fiber / 100 || "N/A"}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -113,19 +117,33 @@ export function MealDetailsPage() {
                 <tbody>
                   <tr>
                     <td>Consumption Portion:</td>
-                    <td>20.5</td>
+                    <td>
+                      {currencyFormatter.format(
+                        meal.price?.consumption_portion / 100,
+                      ) || "N/A"}
+                    </td>
                   </tr>
                   <tr>
                     <td>Consumption Total:</td>
-                    <td>12.0</td>
+                    <td>
+                      {currencyFormatter.format(
+                        meal.price?.consumption_total / 100,
+                      ) || "N/A"}
+                    </td>
                   </tr>
                   <tr>
                     <td>Portion:</td>
-                    <td>12.5</td>
+                    <td>
+                      {currencyFormatter.format(meal.price?.portion / 100) ||
+                        "N/A"}
+                    </td>
                   </tr>
                   <tr>
                     <td className="total-tag">Total:</td>
-                    <td className="total-tag-amount">34.9</td>
+                    <td className="total-tag-amount">
+                      {currencyFormatter.format(meal.price?.total / 100) ||
+                        "N/A"}
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -135,9 +153,7 @@ export function MealDetailsPage() {
                 <h5>Chef's Tips</h5>
               </div>
               <ul>
-                <li>Use fresh ingredients for better flavor.</li>
-                <li>Don't overcook the meat to keep it tender.</li>
-                <li>Experiment with different spices to enhance the taste.</li>
+                <li>{meal.tips_summary.content || "No tips available."}</li>
               </ul>
             </div>
           </div>

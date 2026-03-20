@@ -155,9 +155,9 @@ li {
 
 .meal-instruction .meal-nutrition table tr td,
 .meal-price table tr td {
-  padding: 5px;
+  padding:  0 2px;
   border: 1px solid rgba(0, 0, 0, 0.247);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .main-instruction-btn button {
@@ -172,6 +172,7 @@ li {
 
 .total-tag, .total-tag-amount {
   font-weight: bold;
+  font-size: 18px;
 }
 
 .tips {
