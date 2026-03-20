@@ -9,6 +9,7 @@
 
 .display .ad-message h1 {
   color: var(--accent);
+  font-family: 'Pacifico', cursive;
 }
 
 .display .ad-message p {
