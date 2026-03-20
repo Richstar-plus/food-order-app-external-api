@@ -32,6 +32,7 @@ export function Cart() {
           image={item.thumbnail_url}
           price={item.price.total}
           quantity={item.quantity}
+          id={item.id}
           onIncrease={() => cartContext.addItemToCartHandler(item)}
           onDecrease={() => cartContext.removeItemFromCartHandler(item.id)}
         />

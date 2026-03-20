@@ -1,10 +1,12 @@
 import { currencyFormatter } from "../util/formatter";
+import { NavLink } from "react-router-dom";
 
 export function CartItems({
   image,
   name,
   price,
   quantity,
+  id,
   onIncrease,
   onDecrease,
 }) {
@@ -16,12 +18,16 @@ export function CartItems({
 
   return (
     <div className="cart-card-item">
-      <div className="cart-card-image">
-        <img className="img-fluid" src={image} alt="Product" />
-      </div>
+      <NavLink to={`/meal/${id}`}>
+        <div className="cart-card-image">
+          <img className="img-fluid" src={image} alt="Product" />
+        </div>
+      </NavLink>
 
       <div className="cart-card-title">
-        <div className="cart-title">{truncateName(name)}</div>
+        <NavLink to={`/meal/${id}`}>
+          <div className="cart-title">{truncateName(name)}</div>
+        </NavLink>
       </div>
 
       <div className="cart-card-quantity">
