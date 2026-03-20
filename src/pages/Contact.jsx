@@ -2,6 +2,7 @@ import chefContact from "../images/chef-contact.png";
 import callImage from "../images/call.avif";
 import emailImage from "../images/email.avif";
 import locationImage from "../images/location.png";
+import "./Contact.css";
 
 export function ContactPage() {
   return (
@@ -59,25 +60,24 @@ export function ContactPage() {
               </div>
             </div>
           </div>
-          
+
           <div className="contact-form">
-            <h2>Send Us a Message</h2>
+            <h4>Send Us a Message</h4>
             <form>
-              <div className="form-group">
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" required />
+              <div className="form-group-container">
+                <div className="form-group">
+                  <input type="text" placeholder="Name" id="name" name="name" required />
+                </div>
+                <div className="form-group">
+                  <input type="email" placeholder="Email" id="email" name="email" required />
+                </div>
               </div>
               <div className="subject">
-                <label htmlFor="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required />
+                <input type="text" placeholder="Subject" id="subject" name="subject" required />
               </div>
               <div className="form-group">
-                <label htmlFor="message">Message:</label>
                 <textarea
+                  placeholder="Your message here..."
                   id="message"
                   name="message"
                   rows="5"
