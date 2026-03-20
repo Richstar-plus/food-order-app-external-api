@@ -1,0 +1,78 @@
+.main-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 100vh;
+  text-align: center;
+}
+
+.main-display .about-title h1 {
+  color: var(--accent);
+  font-family: "Pacifico";
+  margin-bottom: 1rem;
+}
+
+.main-display .about-info h3 {
+  color: rgb(51, 0, 53);
+  margin: 10px;
+  font-size: 24px;
+}
+
+.main-display .about-info p {
+  color: rgb(77, 51, 2);
+  font-size: 16px;
+  max-width: 600px;
+  margin: 15px auto;
+}
+
+.about-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-hero .hero-content {
+  width: 160px;
+  height: 230px;
+  border-radius: 15px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-image {
+  width: 70%;
+  height: 90px;
+  margin-top: 10px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero .hero-title h3 {
+  color: rgb(245, 153, 14);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.103);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.about-hero .hero-text p {
+  color: rgb(63, 58, 50);
+  font-size: 12px;
+  padding: 0 10px;
+  margin-top: 10px;
+  line-height: 20px;
+  text-align: center;
+}
