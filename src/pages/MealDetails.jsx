@@ -2,12 +2,15 @@ import "./MealDetails.css";
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import play from "../images/play.png";
-import thumbnail from "../images/video.avif";
 import { Modal } from "../components/Modal";
-import rating1 from "../images/ratings/3star.png";
+import rating1 from "../images/ratings/1star.png";
+import rating2 from "../images/ratings/2star.png";
+import rating3 from "../images/ratings/3star.png";
+import rating4 from "../images/ratings/4star.png";
+import rating5 from "../images/ratings/5star.png";
 import { Button } from "../components/UI/Button";
 import { currencyFormatter } from "../util/formatter.js";
+import { VideoBox } from "../components/UI/VideoPlayer.jsx";
 
 export function MealDetailsPage() {
   const meal = useLoaderData();
@@ -20,6 +23,9 @@ export function MealDetailsPage() {
   function handleCloseModal() {
     setShowModal(false);
   }
+
+  const rating = Math.round(meal.user_ratings.score * 5);
+  const reviews = meal.user_ratings.count_positive + meal.user_ratings.count_negative;
 
   return (
     <>
@@ -55,10 +61,7 @@ export function MealDetailsPage() {
               <img src={meal.thumbnail_url} alt="" className="meal-image" />
             </div>
             <div className="details-video">
-              <div className="play-icon">
-                <img className="play" src={play} alt="" />
-              </div>
-              <img src={thumbnail} alt="" className="video-thumbnail" />
+              <VideoBox url={meal.original_video_url} />
               <div className="video-info">Watch Cooking Video</div>
             </div>
           </div>
@@ -67,8 +70,14 @@ export function MealDetailsPage() {
               <h1>{meal.name}</h1>
             </div>
             <div className="rating">
-              <img src={rating1} alt="" className="rating-image" />
-              <div className="rating-value">(12000 Reviews)</div>
+              {
+                rating === 5 ? <img src={rating5} alt="" className="rating-image" /> :
+                rating >= 4 ? <img src={rating4} alt="" className="rating-image" /> :
+                rating >= 3 ? <img src={rating3} alt="" className="rating-image" /> :
+                rating >= 2 ? <img src={rating2} alt="" className="rating-image" /> :
+                <img src={rating1} alt="" className="rating-image" />
+              }
+              <div className="rating-value">({reviews} Reviews)</div>
             </div>
             <div className="meal-description">
               <p>{meal.description}</p>
@@ -153,7 +162,7 @@ export function MealDetailsPage() {
                 <h5>Chef's Tips</h5>
               </div>
               <ul>
-                <li>{meal.tips_summary.content || "No tips available."}</li>
+                <li>{meal.tips_summary?.content || "No tips available."}</li>
               </ul>
             </div>
           </div>
