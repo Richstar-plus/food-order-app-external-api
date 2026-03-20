@@ -75,7 +75,7 @@ export function MealDetailsPage() {
           </div>
           <div className="details-row2">
             <div className="meal-title">
-              <h1>{meal.name}</h1>
+              <h3>{meal.name}</h3>
             </div>
             <div className="rating">
               {rating === 5 ? (
