@@ -3,6 +3,8 @@ import chefImage from "../images/about-chef.webp";
 import chefFace from "../images/chef-facee.png";
 import deliveryImage from "../images/delivery-bike.png";
 import satisfaction from "../images/satisfaction.png";
+import { HeroCard } from "../components/HeroCard";
+
 export function AboutPage() {
   return (
     <>
@@ -22,49 +24,26 @@ export function AboutPage() {
             <img src={chefImage} alt="Delicious food" />
           </div>
           <div className="about-hero">
-            <div className="hero-content">
-              <div className="hero-image">
-                <img src={chefFace} alt="Chef Face" />
-              </div>
-              <div className="hero-title">
-                <h3>Meet Our Chef</h3>
-              </div>
-              <div className="hero-text">
-                <p>
-                  Our head chef, John Doe, has over 20 years of experience in
-                  the culinary industry...
-                </p>
-              </div>
-            </div>
+            <HeroCard
+              image={chefFace}
+              title="Meet Our Chef"
+              text="Our head chef, John Doe, has over 20 years of experience in the culinary industry..."
+              textClass="hero-text"
+            />
 
-            <div className="hero-content">
-              <div className="hero-image">
-                <img src={deliveryImage} alt="Delivery Bike" />
-              </div>
-              <div className="hero-title">
-                <h3>Fast & Reliable Delivery</h3>
-              </div>
-              <div className="hero-text">
-                <p>
-                  Fast and reliable delivery is our top priority. We ensure that
-                  your...
-                </p>
-              </div>
-            </div>
+            <HeroCard
+              image={deliveryImage}
+              title="Fast & Reliable Delivery"
+              text="We ensure fast and reliable delivery of your favorite dishes..."
+              textClass="hero-text"
+            />
 
-            <div className="hero-content">
-              <div className="hero-image">
-                <img src={satisfaction} alt="Customer Satisfaction" />
-              </div>
-              <div className="hero-title">
-                <h3>Customer Satisfaction</h3>
-              </div>
-              <div className="hero-text">
-                <p>
-                  We are committed to providing excellent customer service and...
-                </p>
-              </div>
-            </div>
+            <HeroCard
+              image={satisfaction}
+              title="Customer Satisfaction"
+              text="We are committed to providing excellent customer service and..."
+              textClass="hero-text"
+            />
           </div>
         </section>
       </main>

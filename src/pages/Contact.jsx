@@ -3,6 +3,7 @@ import callImage from "../images/call.avif";
 import emailImage from "../images/email.avif";
 import locationImage from "../images/location.png";
 import "./Contact.css";
+import { HeroCard } from "../components/HeroCard";
 
 export function ContactPage() {
   return (
@@ -24,41 +25,26 @@ export function ContactPage() {
             <img src={chefContact} alt="Delicious food" />
           </div>
           <div className="about-hero">
-            <div className="hero-content">
-              <div className="hero-image">
-                <img src={callImage} alt="Chef Face" />
-              </div>
-              <div className="hero-title">
-                <h3>Call Us</h3>
-              </div>
-              <div className="hero-text">
-                <p>(+123) 9039-014-066</p>
-              </div>
-            </div>
+            <HeroCard
+              image={callImage}
+              title="Call Us"
+              text="(+123) 9039-014-066"
+              textClass="hero-text"
+            />
 
-            <div className="hero-content">
-              <div className="hero-image">
-                <img src={emailImage} alt="Delivery Bike" />
-              </div>
-              <div className="hero-title">
-                <h3>Email Us</h3>
-              </div>
-              <div className="contact-email">
-                <p>richardsunday0812@gmail.com</p>
-              </div>
-            </div>
+            <HeroCard
+              image={emailImage}
+              title="Email Us"
+              text="richardsunday0812@gmail.com"
+              textClass="contact-email"
+            />
 
-            <div className="hero-content">
-              <div className="hero-image">
-                <img src={locationImage} alt="Customer Satisfaction" />
-              </div>
-              <div className="hero-title">
-                <h3>Visit Our Location</h3>
-              </div>
-              <div className="hero-text">
-                <p>123 Main Street, Port Harcourt, Rivers, Nigeria</p>
-              </div>
-            </div>
+            <HeroCard
+              image={locationImage}
+              title="Visit Our Location"
+              text="123 Main Street, Port Harcourt, Rivers, Nigeria"
+              textClass="hero-text"
+            />
           </div>
 
           <div className="contact-form">
@@ -66,14 +52,32 @@ export function ContactPage() {
             <form>
               <div className="form-group-container">
                 <div className="form-group">
-                  <input type="text" placeholder="Name" id="name" name="name" required />
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    id="name"
+                    name="name"
+                    required
+                  />
                 </div>
                 <div className="form-group">
-                  <input type="email" placeholder="Email" id="email" name="email" required />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    id="email"
+                    name="email"
+                    required
+                  />
                 </div>
               </div>
               <div className="subject">
-                <input type="text" placeholder="Subject" id="subject" name="subject" required />
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  id="subject"
+                  name="subject"
+                  required
+                />
               </div>
               <div className="form-group">
                 <textarea
